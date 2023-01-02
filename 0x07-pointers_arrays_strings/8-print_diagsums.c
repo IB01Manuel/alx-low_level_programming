@@ -9,17 +9,19 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, p, l = 0, r = 0;
+	int i, sum1 = 0, sum2 = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		p = (i * size) + i;
-		l += *(a + p);
+		sum1 += a[i];
+		a += size;
 	}
-	for (j = 0; j < size; j++)
+	a -= size;
+
+	for (i = 0; i < size; i++)
 	{
-		p = (j * size) + (size - 1 - j);
-		r += *(a + p);
+		sum2 += a[i];
+		a -= size;
 	}
-	printf("%d, %d\n", l, r);
+	printf("%d, %d\n", sum1, sum2);
 }
