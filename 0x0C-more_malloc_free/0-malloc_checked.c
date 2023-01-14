@@ -8,10 +8,10 @@
  */
 void *malloc_checked(unsigned int b);
 {
-	void *i;
+	void *c;
 
-	i = malloc(b);
-	if (i == NULL)
+	c = malloc(b);
+	if (c == NULL)
 		exit(98);
-	return (i);
+	return (c);
 }
